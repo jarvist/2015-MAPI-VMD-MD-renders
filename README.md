@@ -1,8 +1,11 @@
 # 2015-MAPI-VMD-MD-renders
 
+A mini Repo just to document some ray traced renders (movies) made with VMD of MAPI Molecular Dynamics. 
+
 ![Render 0.625 ps](annotate_MAPI.00025.png)
 
-A mini Repo just to document some renders I made with VMD of MAPI Molecular Dynamics. Software used was VMD with the Tachyon renderer. "Polyhedra" method was used and abused (mainly abused, as its a bit of a hack job and doesn't treat PBCs correct, or atom selections - so I made subsets of the trajectories that just contained Pb and I).
+All these pictures were rendered with the Tachyon renderer, running on a 24 core Linux workstation over SSH / X-Forwarding, which made light work of it! 
+The `Polyhedra` drawing method was used and abused (mainly abused, as its a bit of a hack job and doesn't treat PBCs, or atom selections - so I made subsets of the trajectories that just contained Pb and I, and as you can see the PbI6 octahedra are not fully drawn).
 
 Please see the VMD 'Visualization State' `visual.vmd` which you can also plunder for the Tcl commands, and the annotate script which used 'convert' from the Imagemagick toolset to add a counter of the simulation time to the bottom right.
 
@@ -19,9 +22,10 @@ And, with varying time speed (achieved by deleting choice subsets of the PNG fil
 ## Helpful Coommands
 
 I wrote these useful VMD commands into my lab book as I sorted it out.
+Test `pbc` commands without `-all`, which applies sequentially to all trajectory frames. Though note, sometimes the correct full behaviour is only seen once you do the full pbc -all!
 ```
 pbc set {a b c alpha beta gamma} -all
-pbc wrap -shiftcenterrel {-0.1 -0.1 -0.1} -all   #bump PBCs to rebuild octahedra across edge
+pbc wrap -shiftcenterrel {-0.1 -0.1 -0.1} -all   #bump PBCs to rebuild at least one full octahedra
 pbc box -color green # Everyone loves a box!
 display resize 1920 1080 #Resize to match Youtube HiDef spec; Renders will follow this
 ```
