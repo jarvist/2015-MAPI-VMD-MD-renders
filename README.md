@@ -9,10 +9,12 @@ Please see the VMD 'Visualization State' `visual.vmd` which you can also plunder
 ## Youtube
 
 Videos look like:
-[![Linear Speed](http://img.youtube.com/vi/PPwSIYLnONY/0.jpg)](http://www.youtube.com/watch?v=PPwSIYLnONY)
 
-And, with varying time speed (achieved by deleting choice subsets of the PNG files; and using a different Glob expression with ffmpeg)
-[![Vary Speed](http://img.youtube.com/vi/K_-rsop0n5A/0.jpg)](http://www.youtube.com/watch?v=K_-rsop0n5A)
+[![Linear Speed](http://img.youtube.com/vi/K_-rsop0n5A/0.jpg)](http://www.youtube.com/watch?v=K_-rsop0n5A)
+
+And, with varying time speed (achieved by deleting choice subsets of the PNG files; and using a different Glob expression with ffmpeg):
+
+[![Varying Speed](http://img.youtube.com/vi/PPwSIYLnONY/0.jpg)](http://www.youtube.com/watch?v=PPwSIYLnONY)
 
 ## Helpful Coommands
 
@@ -27,5 +29,6 @@ display resize 1920 1080 #Resize to match Youtube HiDef spec; Renders will follo
 Everything rendered in the terminal with FFMPEG; I had to up the quality significantly to not degrade the ray traces:
 ` ffmpeg -framerate 25 -i annotate_MAPI.%05d.png -s:v 1920x1080 -c:v libx264 -profile:v high -crf 18 -pix_fmt yuv420p -r 25 MAPI_salt_cellar_annotate.mp4 `
 
-May your Methylammnium rotate in a manner truly sublime.
+*May your Methylammnium rotate in a manner truly sublime.*
+
 Jarv 2015-05-06
